@@ -5,6 +5,7 @@ define(['jquery','underscore','backbone','model/news/newsModel'],function($,_,Ba
     var Newss=Backbone.Collection.extend({
         model:News,
         fetch:function(){
+                var self=this;
                 var tmpNews;
                 var jqxhr= $.getJSON('data/data.json').success(function(data,status,xhr){
                     $.each(data,function(i,item){
